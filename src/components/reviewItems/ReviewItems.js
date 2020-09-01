@@ -2,8 +2,7 @@ import React from 'react';
 import './ReviewItem.css';
 
 const ReviewItems = (props) => {
-    console.log(props.product);
-    const {name, quantity, img, seller, price, stock} = props.product;
+    const {name, quantity, img, seller, price, stock, key} = props.product;
     return (
         <div className="product">
             <div>
@@ -15,7 +14,7 @@ const ReviewItems = (props) => {
                     <p><small>by: {seller}</small></p>
                     <p>${price}</p>
                     <p><small>only {stock} left in stock - order soon</small></p>
-                    <button>Remove</button>
+                    <button onClick = {()=>props.removeProduct(key)}>Remove</button>
             </div>
         </div>
     );
