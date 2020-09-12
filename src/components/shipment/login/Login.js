@@ -7,7 +7,7 @@ import { UserContext } from '../../../App';
 firebase.initializeApp(firebaseConfig);
 
 function Login() {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
   const [newUser, setNewUser] = useState(false);
   const [user, setUser] = useState({
     isSignedIn : false,
@@ -17,6 +17,8 @@ function Login() {
     photo : '',
   });
 
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  
   var provider = new firebase.auth.GoogleAuthProvider();
   var fbProvider = new firebase.auth.FacebookAuthProvider();
   const handleSignIn = ()=>{
