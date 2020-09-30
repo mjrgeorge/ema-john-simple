@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../App';
 import { useHistory, useLocation } from 'react-router-dom';
-import { createUserWithEmailAndPassword, handleFBSignIn, handleGoogleSignIn, handleSignOut, initializeLoginFrameworks, signInWithEmailAndPassword } from './LoginManager';
+import { createUserWithEmailAndPassword, handleFBSignIn, handleGoogleSignIn, handleSignOut, initializeLoginFrameworks, signInWithEmailAndPassword, resetPassword} from './LoginManager';
+
 
 function Login() {
   const [newUser, setNewUser] = useState(false);
@@ -106,6 +107,8 @@ const handleResponse = (res, redirect)=>{
         <input type="password" name="password" onBlur={handleBlur} placeholder="Enter Your Password"/>
         <br/>
         <input type="submit" value={newUser? "Sign Up": "Sign In"}/>
+        <br/>
+        <button onClick = {() =>resetPassword(user.email)}>Forget Or Reset Password</button>
       </form>
       <p style= {{color: "red"}}> {user.error} </p>
       {user.success&&<p style= {{color: "green"}}>User {newUser? 'Created' : 'Logged In'} Successfully</p>}

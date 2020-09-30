@@ -11,8 +11,6 @@ const Shipment = () => {
     console.log('From submitted data', data);
   };
 
-console.log(watch("example"));
-
 return (
   <form className='ship-form' onSubmit={handleSubmit(onSubmit)}>
     <input name="name" defaultValue={loggedInUser.name} ref={register({required:true})} placeholder="Enter Your Name"/>
