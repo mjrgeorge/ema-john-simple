@@ -2,6 +2,7 @@ import React from 'react';
 import fakeData from '../../fakeData';
 
 const Inventory = () => {
+    document.title = 'Mange Inventory';
     const handleAddProduct = () => {
         fetch('http://localhost:5000/addProduct', {
             method: 'POST',

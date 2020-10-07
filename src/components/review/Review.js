@@ -6,8 +6,11 @@ import ReviewItems from '../reviewItems/ReviewItems';
 import Cart from '../cart/Cart';
 import happyImage from '../../images/giphy.gif'
 import { useHistory } from 'react-router-dom';
+import loading from '../../images/loading.gif';
+
 
 const Review = () => {
+    document.title = 'Order Review';
     const [cart, setCart] = useState([]);
     const [orderPlaced, setOrderPlaced] = useState(false);
     const history = useHistory();
@@ -40,6 +43,8 @@ const Review = () => {
     }
     return (
         <div className = 'shop_container'>
+            {cart.length === 0 && <img style={{width: '100%', height: '100vh'}} src={loading} alt="Loading Spinner"/>}
+
             <div className="products_container">
                 <h1>Cart Item : {cart.length}</h1>
             {
