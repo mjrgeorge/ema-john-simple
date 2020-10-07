@@ -14,7 +14,7 @@ const ReviewItems = (props) => {
                     <p><small>by: {seller}</small></p>
                     <p>${price}</p>
                     <p><small>only {stock} left in stock - order soon</small></p>
-                    <button onClick = {()=>props.removeProduct(key)}>Remove</button>
+                    <button className="cartBtn" onClick = {()=>props.removeProduct(key)}>Remove</button>
             </div>
         </div>
     );

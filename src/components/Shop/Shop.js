@@ -11,6 +11,8 @@ const Shop = () => {
 
     const [products, setProducts] = useState(fakeData);
     const [cart, setCart] = useState([]);
+
+    
     
     const handleAddProduct = (product)=>{
         const toBeAddedKey = product.key;
@@ -39,7 +41,7 @@ const Shop = () => {
             </div>
             <div className="cart_container">
                 <Cart cart = {cart} >
-                <Link to = "/review"><button>Ordered Review</button></Link>
+                <Link to = "/review"><button className="cartBtn">Ordered Review</button></Link>
                 </Cart>
             </div>
         </div>

@@ -9,7 +9,7 @@ const Cart = (props) => {
     }else if (total>0){
         shipping = 12.99;
     };
-    const tax = Math.round(total/10);
+    const tax = Math.round(total*.10);
     return (
         <div>
             <h2>Order Summary</h2>

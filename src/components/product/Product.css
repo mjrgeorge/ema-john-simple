@@ -9,7 +9,7 @@
     font-weight: 400;
 }
 
-button {
+.cartBtn {
     background-color: goldenrod;
     width: 150px;
     height: 30px;
